@@ -2,6 +2,7 @@ import React from 'react';
 // import Feedback from './feedback/Feedback';
 import Statistics from './Statistics/Statistics';
 import FeedbackOptions from 'components/controls/FeedbackOptions ';
+import Notification from 'components/Notification/Notification';
 
 export default class App extends React.Component {
   state = {
@@ -44,13 +45,17 @@ export default class App extends React.Component {
           onIncrementBad={this.badElement}
         />
         <div>
-          <Statistics
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
-            total={total}
-            positiveFeedbackPercentage={positiveFeedbackPercentage}
-          />
+          {total === 0 ? (
+            <Notification message="There is no feedback" />
+          ) : (
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={total}
+              positiveFeedbackPercentage={positiveFeedbackPercentage}
+            />
+          )}
         </div>
       </>
     );
