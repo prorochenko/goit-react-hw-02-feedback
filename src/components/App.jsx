@@ -1,6 +1,6 @@
 import React from 'react';
 import Statistics from './Statistics/Statistics';
-import FeedbackOptions from './Controls/FeedbackOptions';
+import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Notification from './Notification/Notification';
 import Section from './TitleSection/TitleSection';
 import css from './CommonStyle/Common.module.css';
