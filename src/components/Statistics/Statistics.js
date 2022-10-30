@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './statistic.module.css';
+import css from './Statistic.module.css';
 
 const Statistics = ({
   good,

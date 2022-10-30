@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './titleSection.module.css';
+import css from './TitleSection.module.css';
 
 const Section = ({ title, children }) => (
   <section>

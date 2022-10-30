@@ -3,7 +3,7 @@ import Statistics from './Statistics/Statistics';
 import FeedbackOptions from 'components/Controls/FeedbackOptions ';
 import Notification from 'components/Notification/Notification';
 import Section from 'components/TitleSection/TitleSection';
-import css from './common.module.css';
+import css from './Common.module.css';
 
 export default class App extends React.Component {
   state = {
