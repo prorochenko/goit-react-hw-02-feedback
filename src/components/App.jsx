@@ -1,9 +1,9 @@
 import React from 'react';
-// import Feedback from './feedback/Feedback';
 import Statistics from './Statistics/Statistics';
 import FeedbackOptions from 'components/Controls/FeedbackOptions ';
 import Notification from 'components/Notification/Notification';
 import Section from 'components/TitleSection/TitleSection';
+import css from './common.module.css';
 
 export default class App extends React.Component {
   state = {
@@ -12,16 +12,12 @@ export default class App extends React.Component {
     bad: 0,
   };
 
-  goodElement = () => {
-    this.setState(prevState => ({ good: prevState.good + 1 }));
+  onLeaveFeedback = option => {
+    this.setState(prevState => ({
+      [option]: prevState[option] + 1,
+    }));
   };
 
-  neutralElement = () => {
-    this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
-  };
-  badElement = () => {
-    this.setState(prevState => ({ bad: prevState.bad + 1 }));
-  };
   countTotalFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
   };
@@ -34,16 +30,16 @@ export default class App extends React.Component {
   };
 
   render() {
+    const { onLeaveFeedback } = this;
     const total = this.countTotalFeedback();
     const positiveFeedbackPercentage = this.countPositiveFeedbackPercentage();
 
     return (
-      <>
+      <div className={css.container}>
         <Section title="Please, leave feedback">
           <FeedbackOptions
-            onIncrementGood={this.goodElement}
-            onIncrementNeutral={this.neutralElement}
-            onIncrementBad={this.badElement}
+            options={Object.keys(this.state)}
+            onLeaveFeedback={onLeaveFeedback}
           />
         </Section>
         <div>
@@ -61,7 +57,7 @@ export default class App extends React.Component {
             )}
           </Section>
         </div>
-      </>
+      </div>
     );
   }
 }
