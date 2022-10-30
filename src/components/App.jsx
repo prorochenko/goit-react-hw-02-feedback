@@ -11,7 +11,6 @@ export default class App extends React.Component {
     neutral: 0,
     bad: 0,
   };
-
   onLeaveFeedback = option => {
     this.setState(prevState => ({
       [option]: prevState[option] + 1,
