@@ -17,7 +17,8 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     </div>
   );
 };
+
 FeedbackOptions.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.shape),
+  options: PropTypes.array,
 };
 export default FeedbackOptions;
