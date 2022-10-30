@@ -2,7 +2,7 @@ import React from 'react';
 import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Notification from './Notification/Notification';
-import Section from './TitleSection/TitleSection';
+import TitleSection from './TitleSection/TitleSection';
 import css from './CommonStyle/Common.module.css';
 
 export default class App extends React.Component {
@@ -35,14 +35,14 @@ export default class App extends React.Component {
 
     return (
       <div className={css.container}>
-        <Section title="Please, leave feedback">
+        <TitleSection title="Please, leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
             onLeaveFeedback={onLeaveFeedback}
           />
-        </Section>
+        </TitleSection>
         <div>
-          <Section title="Statistics">
+          <TitleSection title="Statistics">
             {total === 0 ? (
               <Notification message="There is no feedback" />
             ) : (
@@ -54,7 +54,7 @@ export default class App extends React.Component {
                 positiveFeedbackPercentage={positiveFeedbackPercentage}
               />
             )}
-          </Section>
+          </TitleSection>
         </div>
       </div>
     );
