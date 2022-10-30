@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import css from './Statistic.module.css';
 
 const Statistics = ({
@@ -17,4 +17,11 @@ const Statistics = ({
   </div>
 );
 
+Notification.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positiveFeedbackPercentage: PropTypes.number.isRequired,
+};
 export default Statistics;

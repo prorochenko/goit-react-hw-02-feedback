@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import css from './Controls.module.css';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
@@ -17,5 +17,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     </div>
   );
 };
-
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.shape),
+};
 export default FeedbackOptions;
